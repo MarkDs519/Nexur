@@ -1,8 +1,9 @@
 {
   "name": "webserver",
   "version": "0.1.0",
+  "homepage": "https://671e01a581a5f40e0fd48c04--nexur.netlify.app",
   "private": true,
-  "proxy": "http://127.0.0.1:5050/",
+  "proxy": "https://671e01a581a5f40e0fd48c04--nexur.netlify.app",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
