@@ -1,0 +1,5 @@
+List of tasks:
+
+- connect to printer to print
+- connect to home to control SmartRent
+- connect to alexa
