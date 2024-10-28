@@ -3,9 +3,8 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
 import Home from './components/Home';
-//import handlerInp from './handler.js'
-import ChitChat from './components/ChitChat.js';
-import PrintR from './components/PrintR.js';
+import PrintR from './components/printr/PrintR.js';
+import Game from './components/tictactoe/game.js';
 
 var handler = require('./handler.js');
 
@@ -90,37 +89,6 @@ function App() {
 
   }
 
-  // add user to Chat Engine
-  const addUserChatEngine = (data) => {
-    var data = {
-      username: data.username,
-      secret: handlerInp.generateSecretKey(),
-      email: data.email,
-      first_name: data.firstname,
-      last_name: data.lastname
-    };
-    
-    fetch('https://api.chatengine.io/users/', {
-      method: "POST",
-      mode: "cors",
-      body: JSON.stringify(data),
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'PRIVATE-KEY': 'abc28124-8812-4af4-a446-ad31203abfbe'
-        }
-    })
-    .then(response => response.json())
-    .then(data => console.log("chitchatdata: ", data))
-    .then(data => setChitChatData(data))
-    .then(msg => console.log("Message: ", msg))
-    .catch(function (error) {
-      console.log("Error when inserting data to ChatEngine: ", error);
-    });
-    console.log("what i get: ", chitchatData);
-    //setChitChatData(data);
-  }
-
   // Handle Sign Up
   const signUpHandler = (event) => {
       event.preventDefault();
@@ -143,8 +111,6 @@ function App() {
   
       console.log("Fetching done")
       console.log("sign up data: ", signUpData);
-      //add user to Chat Engine
-      addUserChatEngine(signUpData);
       // clear the inputs
       setSignUpData({
           firstname: "",
@@ -168,7 +134,7 @@ function App() {
           <Route path='/login' element={<Login data={signInData} onChange={signIn}/>}/>
           <Route path="/register" element={<Register data={signUpData} onChange={signUp} handleSignUp={handleSignUp}/>} />
           <Route path='/home' element={<Home/>}/>
-          <Route path='/chitchat' element={<ChitChat login={loginCreateEngine}/>}/>
+          <Route path ='/tictactoe' element={<Game />}/>
           <Route path='/printr' element={<PrintR handleFileUpload={handleFileUpload} handleFileSubmit={handleFileSubmit}/>}/>
         </Routes>
       </BrowserRouter>

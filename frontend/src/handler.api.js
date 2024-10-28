@@ -54,45 +54,6 @@ const handlerapi = (creds) => {
             return false;
         },
 
-        // connect to ChatEngine
-        connectChatEngineServer: async(data) => {
-            let parameters = {
-                method: "POST",
-                mode: "cors", 
-                body: JSON.stringify(data),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                    'PRIVATE-KEY': params.ccPrivateKey
-                }
-            };
-            let respose = await handlerInp.get('https://api.chatengine.io/users/', parameters);
-            return respose;
-        },
-
-        // signUp also adds the user to ChatEngine server
-        addUserChatEngine: async(event, signUpData) => {
-            console.log("Event: ", event);
-            var data = {
-                username: signUpData.username,
-                secret: handlerInp.generateSecretKey(),
-                email: signUpData.email,
-                first_name: signUpData.firstname,
-                last_name: signUpData.lastname
-            };
-            try{
-                let response = await handlerInp.connectChatEngineServer(data)
-                return response;
-                //console.log("ChitChat Data: ", data);
-                //return data;
-            }
-            catch(err){
-                console.log("Failed to insert data to ChatEngine - ", error);
-            }
-            return false;
-
-        },
-
         // file upload handler
         fileSubmit: async(event, file) => {
             event.preventDefault();
