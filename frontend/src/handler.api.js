@@ -158,7 +158,7 @@ const handlerapi = (creds) => {
 
             // for all other things
             newSignUpData[event.target.name] = event.target.value;
-            console.log(newSignUpData);
+            //console.log(newSignUpData);
             setData(newSignUpData);
             //return newSignUpData;  
         },

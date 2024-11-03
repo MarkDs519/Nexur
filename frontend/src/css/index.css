@@ -6,9 +6,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(pink,rgb(199, 143, 248) 10%, pink);
-  width: 100%;
-  height: 95vh;
+  background-image: linear-gradient(rgb(49, 70, 84) 10%, rgb(6, 163, 171));
+  min-width: 100%;
+  min-height: 110vh;
 }
 
 .title {

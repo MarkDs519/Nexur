@@ -22,6 +22,9 @@ const StyledTabs = styled((props) => (
   },
 });
 
+import Styles from '../css/styles';
+console.log(Styles);
+
 const StyledTab = Styles().navBar;
 
 export default function CustomizedTabs() {

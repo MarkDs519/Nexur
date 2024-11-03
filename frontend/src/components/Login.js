@@ -17,7 +17,7 @@ const Login = ({data, onChange}) => {
     }
 
     const avatarStyle = {
-        background: '#9198e5'
+        background: '#314C54'
     }
     const fieldStyle = {
         margin: '10px auto'
@@ -59,10 +59,10 @@ const Login = ({data, onChange}) => {
                         <FormControlLabel name="rememberCheckbox" control={<Checkbox id="rememberCheckbox" name="rememberCheckbox" checked={data.rememberCheckbox} onChange={(e) => onChange(e)}/>} label="Remember me" />
                         <Button variant="contained" color="primary" fullWidth style={btnStyle} disabled={!data.username || !data.password || data.usernameValid===false || data.passwordValid===false} onClick={e => navigate('/home')}>Log in</Button>
                         <Typography>
-                            <Link href='#'>Forgot password ?</Link>
+                            <Link color="#fffff" href='#'>Forgot password ?</Link>
                         </Typography>
                         <Typography>
-                            <Link href='/Register'>Sign Up</Link>
+                            <Link color="#314C54" href='/Register'>Sign Up</Link>
                         </Typography>
                     </Paper>
                 </Grid>

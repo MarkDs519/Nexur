@@ -31,14 +31,6 @@ function App() {
     passwordValid: false
   })
 
-  // chitchat user data
-  const [chitchatData, setChitChatData] = useState({
-    username: "",
-    secret: "",
-    email: "",
-    firs_tname: "",
-    last_name: ""
-  });
 
   // upload file data
   const [file, setFile] = useState();
@@ -57,9 +49,6 @@ function App() {
   const handleSignUp = (e) => {
     e.preventDefault();
     //TODO: add user to Azure Data Server
-
-    // add user to ChatEngine Server
-    handler.addUserChatEngine(e, signUpData);
     // clear the inputs
     setSignUpData({
       firstname: "",
@@ -72,10 +61,6 @@ function App() {
       passwordValid: false
     });
 
-  }
-
-  const loginCreateEngine = () => {
-    chitchatData = handler.addUserChatEngine(signUpData);
   }
 
   // handle file upload
