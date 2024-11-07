@@ -42,17 +42,25 @@ function ResponsiveAppBar() {
     <AppBar position="static" sx={{bgcolor: "#393E46"}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <NavLink to={"/home"} className='home-button'>
-            <a href='' className='logo'>
-              <img
-                src={logo}
-                width="50"
-                height="50"
-                className="d-inline-block align-top"
-                alt="React Bootstrap logo"
-              />
-            </a>
-          </NavLink>
+        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'white',
+              textDecoration: 'none',
+            }}
+          >
+            <NavLink to={"/home"} underline="none">
+              neXur
+            </NavLink>
+          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -87,28 +95,12 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/home"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            neXur
-          </Typography>
+          
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="/home"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -116,11 +108,13 @@ function ResponsiveAppBar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'white',
               textDecoration: 'none',
             }}
           >
-            neXur
+            <NavLink to={"/home"} underline="none" sx={{color: "white"}}>
+              neXur
+            </NavLink>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
