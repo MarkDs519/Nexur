@@ -1,14 +1,18 @@
 
+
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(rgb(49, 70, 84) 10%, rgb(6, 163, 171));
-  min-width: 100%;
-  min-height: 110vh;
+  background: linear-gradient(rgb(49, 70, 84) 10%, rgb(6, 163, 171));
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
 }
 
 .title {
@@ -33,11 +37,19 @@ code {
 }
 
 .home {
-  width: 80rem;
-  display: flex;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 3rem;
   justify-content: space-evenly;
   align-items: center;
-  padding: 25px;
+  @media (max-width: 840px) {
+    width: 80%;
+    
+  }
 }
 
 .back-btn {
@@ -60,12 +72,12 @@ code {
   background-color: #ffffff;
   font-family: sans-serif;
   text-transform: uppercase;
-  color: rgb(104, 1, 104);
+  color: #142836;
   padding: 5px;
   margin: 15px;
-  border: 2px rgb(104, 1, 104);
+  border: 2px #142836;
   border-radius: 10px;
-  box-shadow: 0 12px rgb(158, 216, 11), 0 20px rgb(135, 55, 135);
+  box-shadow: 0 12px rgb(8, 205, 169), 0 20px #142836;
   font-size: 100px;
   width: 150px;
   height: 150px;
@@ -75,14 +87,14 @@ code {
 }
 
 .btn:hover{
-  background-color: rgba(202, 98, 190, 0.475);
+  background-color: rgb(103, 152, 155);
   color: antiquewhite;
-  box-shadow: 0 8px rgb(158, 216, 11), 0 14px rgb(135, 55, 135);
+  box-shadow: 0 8px rgb(8, 205, 169), 0 14px #142836;
 }
 
 .btn:active{
   top: 8px;
-  box-shadow: 0 4px rgb(158, 216, 11), 0 10px rgb(135, 55, 135);
+  box-shadow: 0 4px rgb(8, 205, 169), 0 10px #142836;
 }
 
 .disabled .btn {
@@ -93,7 +105,7 @@ code {
   top: 0;
   background: white;
   color: rgb(104, 1, 104);
-  box-shadow: 0 12px rgb(158, 216, 11), 0 20px rgb(135, 55, 135);
+  box-shadow: 0 12px rgb(8, 205, 169), 0 20px #142836;
 }
 
 .btn.disabled {
@@ -103,25 +115,43 @@ code {
 .btn.disabled:hover {
   top: 0;
   background: white;
-  color: rgb(104, 1, 104);
-  box-shadow: 0 12px rgb(158, 216, 11), 0 20px rgb(135, 55, 135);
+  color: #142836;
+  box-shadow: 0 12px rgb(8, 205, 169), 0 20px #142836;
 
 }
 
 .game{
+  max-width: 1280px;
   display: flex;
-  flex-wrap: wrap;
+  margin-top: 2rem;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 1240px) {
+    max-width: 840px;
+  }
+  
+}
+
+.game-info{
+  color: white;
+  font-size: 30px;
+  margin-top: 2rem;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.game-info{
-  margin: 15px;
-  color: white;
-}
-
 .board > div {
   display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 1240px) {
+    display: flex;
+    max-width: 370px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 ul{

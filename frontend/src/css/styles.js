@@ -1,7 +1,7 @@
 import React from "react";
 import { styled} from "@mui/material";
 import Button from "@mui/material/Button";
-import { purple } from '@mui/material/colors';
+import { purple, blue } from '@mui/material/colors';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
@@ -9,10 +9,10 @@ const Styles = () => {
     var style = {
         // start Button Object
         startBtn: styled(Button)(({ theme }) => ({
-            color: theme.palette.getContrastText(purple[500]),
-            backgroundColor: purple[500],
+            color: "white",
+            backgroundColor: "#142836",
             '&:hover': {
-              backgroundColor: purple[700],
+              backgroundColor: "#047863",
             },
         })),
         // back Button Object

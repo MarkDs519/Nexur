@@ -18,7 +18,7 @@ const ServicesCard = () => {
 			</div> 
 			<div className="home"> 
 				{/* Tic Tac Toe */}
-				<Card sx={{ Width: 345 }}> 
+				<Card sx={{ maxWidth: 500, minWidth: 100 }}> 
 					<CardActionArea onClick={e => navigate('/tictactoe')}> 
 						<CardMedia 
 							component="img"

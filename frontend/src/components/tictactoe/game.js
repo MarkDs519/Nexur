@@ -3,6 +3,7 @@ import Board from "./board.js";
 import Styles from "../../css/styles.js";
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar.js";
 
 
 // reducer function
@@ -108,13 +109,12 @@ function Game (){
     )
     return(
         <div>
-            <div className="back-btn">
-                <BackButton onClick={() => navigate(-1)} startDecorator={<KeyboardArrowLeft />} >
-                    Back
-                </BackButton>
-            </div>
+            <Navbar></Navbar>
         <div className={winner?"game disabled":"game"}>
             <div className="game-board">
+                <div className="game-info">
+                    <div>{playreStatus}</div>
+                </div>
                 <Board 
                     onClick={(i) => handleClick(i)} 
                     squares={current.squares}
@@ -122,14 +122,9 @@ function Game (){
                 </Board>
                 <div className="start-btn">
                     <StartButton onClick={() => handleStartNewGame()}>Start New Game</StartButton>
+                </div>
             </div>
-            </div>
-            <div className="game-info">
-                <div>{playreStatus}</div>
-                <ul>
-                    {moveLog}
-                </ul>
-            </div>
+            
         </div>
         </div>
         
